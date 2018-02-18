@@ -64,7 +64,7 @@
       <a href="#">Github</a>
       </Col>
       <Col span="4" class="img">
-      <img src="../assets/images/header.jpg"/>
+        <img v-bind:src="headerImgUrl"/>
       </Col>
       <Col span="10" class="text right">
       <Col span="24" class="title">
@@ -96,6 +96,11 @@
   export default {
     name: 'header',
     components: {},
+    data () {
+      return {
+        headerImgUrl : '/static/images/header.jpg'
+      }
+    },
     methods: {
       goTo: function (name) {
 //        console.log(name)
