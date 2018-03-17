@@ -56,6 +56,8 @@ module.exports = {
 sudo npm run build # 只是打包，不需要启动服务
 
 sudo node server # 端口是3000
+
+nohup sudo node server &>> /data/www/blog.charmingkamly.cn/logs/nohup.log  & # 挂起
 ```
 
 
