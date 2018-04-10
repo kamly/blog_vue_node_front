@@ -40,8 +40,8 @@
           {{item.createTime | substrTime}}
         </span>
           <span class="tag">
-           <template v-for="(i, i) in item.tag">
-            <!--<Tag color="blue">{{i}}</Tag>-->
+           <template v-for="(item, index) in item.tag">
+            <Tag color="blue">{{item}}</Tag>
            </template>
         </span>
         </div>

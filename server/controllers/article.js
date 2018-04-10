@@ -7,6 +7,9 @@ const Article = require('../models/article')
 
 const getArticles = async (ctx) => {
   let articles = await Article.getArticles()
+  articles.forEach(function(item) {
+    item.dataValues.tag = JSON.parse(item.dataValues.tag);
+  })
   ctx.body = {
     articles,
     success: true,
