@@ -29,15 +29,6 @@
       }
     }
     .content {
-      img {
-        width: 300px;
-        height: 300px;
-      }
-      .title {
-        font-size: 20px;
-        font-weight: bold;
-        border-bottom: 1px solid #dedcdc;
-      }
       margin-bottom: 10px;
       font-size: 20px;
       word-wrap: break-word;
@@ -46,6 +37,27 @@
     }
     .tag {
       margin-bottom: 10px;
+    }
+  }
+  .markdown-style {
+    // 代码高亮
+    pre{
+      border-left: #1a63af solid 5px;
+      background-color: #fff;
+      padding: 10px 10px;
+    }
+    code {
+      background-color: #fff;
+      color: #666;
+    }
+    blockquote{
+      border-left: 6px solid #ddd;
+      margin: 30px 0;
+      padding-left: 20px;
+    }
+    blockquote blockquote{
+      border: none;
+      text-align: right;
     }
   }
 </style>
@@ -75,8 +87,8 @@
 
     <!-- 内容 -->
     <Row class="content">
-      <Row v-html="articleDetail.content">
-        {{articleDetail.content}}
+      <Row class="markdown-style">
+        <vue-markdown v-highlight :source="articleDetail.content"></vue-markdown>
       </Row>
     </Row>
 
@@ -84,8 +96,12 @@
 </template>
 
 <script>
+  import VueMarkdown from 'vue-markdown'
   export default {
     name: 'articleDetail',
+    components: {
+        VueMarkdown // 声明组件
+    },
     filters: {
       substrName: function (value) {
         //console.log(value.name);

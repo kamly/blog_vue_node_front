@@ -11,7 +11,11 @@ const Article = BlogDB.import(articleModel)
 
 // 获取全部文章
 const getArticles = async function () {
-  return await Article.findAll()
+  return await Article.findAll({
+    where: {
+      state: '0'
+    }
+  })
 }
 
 
