@@ -61,7 +61,7 @@
     <Row type="flex" justify="center" align="middle" class="header-des">
       <Col span="10" class="text left">
       <a href="#">简历</a>
-      <a href="#">Github</a>
+      <a href="https://github.com/kamly">Github</a>
       </Col>
       <Col span="4" class="img">
         <img v-bind:src="headerImgUrl"/>
@@ -78,14 +78,14 @@
     </Row>
     <Row type="flex" justify="center" align="middle" class="header-select">
       <Menu mode="horizontal" active-name="index" @on-select="goTo">
-        <MenuItem name="todo">
-          <span>Tool</span>
+        <MenuItem name="works">
+          <span>Works</span>
         </MenuItem>
         <MenuItem name="index">
-          <span>Index</span>
+          <span>Thinks</span>
         </MenuItem>
-        <MenuItem name="life">
-          <span>Life</span>
+        <MenuItem name="about">
+          <span>About</span>
         </MenuItem>
       </Menu>
     </Row>

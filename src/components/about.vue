@@ -3,12 +3,12 @@
 */
 
 <style lang="less" rel="stylesheet/less">
-  .container-life {
+  .container-about {
   }
 </style>
 
 <template>
-  <div class="container-life" id="scrollLoader-container">
+  <div class="container-about" id="scrollLoader-container">
     TODO
   </div>
 </template>
@@ -16,7 +16,7 @@
 <script>
 
   export default {
-    name: 'life',
+    name: 'about',
   }
 
 </script>

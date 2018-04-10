@@ -6,13 +6,13 @@
 </style>
 
 <template>
-    <div class="container-todo">
+    <div class="container-works">
 TODO
     </div>
 </template>
 
 <script>
     export default {
-      name: 'todo',
+      name: 'works',
     }
 </script>

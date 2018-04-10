@@ -8,8 +8,8 @@ import Axios from 'axios'
 import VueRouter from 'vue-router'; // 引入router
 
 import articleList from './components/articleList.vue'
-import life from './components/life.vue'
-import todo from './components/todo.vue'
+import about from './components/about.vue'
+import works from './components/works.vue'
 import articleDetail from './components/articleDetail.vue'
 
 Vue.use(iView);
@@ -18,10 +18,10 @@ Vue.use(VueRouter);
 
 // 路由配置
 const RouterConfig = [
-  {path: '/', name: 'index', component: articleList},
-  {path: '/articleDetail/:id', name:'articleDetail', component: articleDetail},
-  {path: '/life', name:'life', component: life},
-  {path: '/todo', name:'todo', component: todo},
+  {path: '/', name: 'index', component: articleList}, // 思考
+  {path: '/articleDetail/:id', name:'articleDetail', component: articleDetail}, // 具体文章
+  {path: '/about', name:'about', component: about}, // 关于
+  {path: '/works', name:'works', component: works}, // 作品
 ];
 
 const router = new VueRouter({
