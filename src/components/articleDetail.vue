@@ -88,7 +88,7 @@
     <!-- 内容 -->
     <Row class="content">
       <Row class="markdown-style">
-        <vue-markdown v-highlight :source="articleDetail.content"></vue-markdown>
+        <vue-markdown :source="articleDetail.content"></vue-markdown>
       </Row>
     </Row>
 

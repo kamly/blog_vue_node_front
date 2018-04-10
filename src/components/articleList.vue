@@ -15,11 +15,8 @@
         font-size: 20px;
         color: #666;
       }
-      .time-tag {
+      .tag {
         margin-top: 10px;
-        .time {
-          margin-right: 20px;
-        }
       }
     }
   }
@@ -31,19 +28,17 @@
     <template v-for="(item, index) in articles">
       <Card class="item" @click.native="goToArticleDetail(item.id)">
         <p class="title" slot="title">{{item.title}}</p>
-        <p class="des">
-          {{item.des}}
-        </p>
-        <div class="time-tag">
-        <span class="time">
+        <span class="time" slot="extra">
           <Icon type="calendar"></Icon>
           {{item.createTime | substrTime}}
         </span>
-          <span class="tag">
+        <p class="des">
+          {{item.des}}
+        </p>
+        <div class="tag">
            <template v-for="(item, index) in item.tag">
             <Tag color="blue">{{item}}</Tag>
            </template>
-        </span>
         </div>
       </Card>
     </template>
