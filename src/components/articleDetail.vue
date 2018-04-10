@@ -4,7 +4,7 @@
 
 
 <style lang="less" rel="stylesheet/less">
-  .v-content {
+  .container-article-detail {
     margin-top: 20px;
     // 标题
     .title {
@@ -63,7 +63,7 @@
 </style>
 
 <template>
-  <div class="v-content">
+  <div class="container-article-detail">
     <Row class="title" type="flex" justify="center">
       {{articleDetail.title}}
     </Row>

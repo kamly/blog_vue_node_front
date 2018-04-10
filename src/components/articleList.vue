@@ -3,7 +3,7 @@
 */
 
 <style lang="less" rel="stylesheet/less">
-  .container-articlelist {
+  .container-article-list {
     margin-top: 20px;
     .item {
       margin-top: 20px;
@@ -24,7 +24,7 @@
 
 
 <template>
-  <div class="container-articlelist">
+  <div class="container-article-list">
     <template v-for="(item, index) in articles">
       <Card class="item" @click.native="goToArticleDetail(item.id)">
         <p class="title" slot="title">{{item.title}}</p>

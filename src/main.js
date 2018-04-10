@@ -9,7 +9,7 @@ import VueRouter from 'vue-router'; // 引入router
 
 import articleList from './components/articleList.vue'
 import about from './components/about.vue'
-import works from './components/works.vue'
+import workList from './components/workList.vue'
 import articleDetail from './components/articleDetail.vue'
 
 Vue.use(iView);
@@ -21,7 +21,7 @@ const RouterConfig = [
   {path: '/', name: 'index', component: articleList}, // 思考
   {path: '/articleDetail/:id', name:'articleDetail', component: articleDetail}, // 具体文章
   {path: '/about', name:'about', component: about}, // 关于
-  {path: '/works', name:'works', component: works}, // 作品
+  {path: '/workList', name:'works', component: workList}, // 作品
 ];
 
 const router = new VueRouter({
