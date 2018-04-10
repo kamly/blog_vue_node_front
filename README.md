@@ -64,7 +64,7 @@ server {
     ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
     ssl_prefer_server_ciphers on;
 
-    if ($server_port = 80 ) {
+    if ($server_port = 80) {
        return 301 https://$host$request_uri;
     }
 
