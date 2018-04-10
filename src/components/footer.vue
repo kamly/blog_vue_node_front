@@ -21,7 +21,7 @@
           <Avatar :style="{background:'#dddee1'}">铭</Avatar>
         </Col>
         <Col span="24" class="text">
-          Copyright @ 2017 kamly Blog
+          Copyright © 2017-{{year}} kamly Blog
         </Col>
       </Col>
       <Col span="4"></Col>
@@ -31,6 +31,15 @@
 
 <script>
   export default {
-    name: 'footer'
+    name: 'footer',
+    data(){
+      return {
+        year: '',
+      }
+    },
+    created(){
+      const date = new Date;
+      this.year = date.getFullYear();
+    }
   }
 </script>
