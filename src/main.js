@@ -8,9 +8,10 @@ import Axios from 'axios'
 import VueRouter from 'vue-router'; // 引入router
 
 import articleList from './components/articleList.vue'
+import articleDetail from './components/articleDetail.vue'
 import about from './components/about.vue'
 import workList from './components/workList.vue'
-import articleDetail from './components/articleDetail.vue'
+import workDetail from './components/workDetail.vue'
 
 Vue.use(iView);
 Vue.prototype.$http = Axios
@@ -18,10 +19,11 @@ Vue.use(VueRouter);
 
 // 路由配置
 const RouterConfig = [
-  {path: '/', name: 'index', component: articleList}, // 思考
+  {path: '/', name: 'index', component: articleList}, // 文章
   {path: '/articleDetail/:id', name:'articleDetail', component: articleDetail}, // 具体文章
   {path: '/about', name:'about', component: about}, // 关于
-  {path: '/workList', name:'works', component: workList}, // 作品
+  {path: '/workList', name:'workList', component: workList}, // 作品
+  {path: '/workDetail/:id', name:'workDetail', component: workDetail}, // 具体作品
 ];
 
 const router = new VueRouter({

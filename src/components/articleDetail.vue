@@ -21,22 +21,12 @@
         margin: 10px;
       }
     }
-    .cover {
-      margin-bottom: 10px;
-      img {
-        width: 1000px;
-        height: 200px;
-      }
-    }
     .content {
       margin-bottom: 10px;
       font-size: 20px;
       word-wrap: break-word;
       word-break: break-all;
       overflow: hidden;
-    }
-    .tag {
-      margin-bottom: 10px;
     }
   }
   .markdown-style {

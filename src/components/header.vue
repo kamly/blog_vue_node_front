@@ -78,7 +78,7 @@
     </Row>
     <Row type="flex" justify="center" align="middle" class="header-select">
       <Menu mode="horizontal" active-name="index" @on-select="goTo">
-        <MenuItem name="works">
+        <MenuItem name="workList">
           <span>Works</span>
         </MenuItem>
         <MenuItem name="index">

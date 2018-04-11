@@ -19,7 +19,7 @@
     <div class="container-work-list">
       <template v-for="(item, index) in [1,2,3,4,5,6,7,8,9,10]">
         <Col span="6">
-          <Card class="item">
+          <Card class="item" @click.native="goToWorkDetail(1)">
               <div style="text-align:center">
                   <img v-bind:src="headerImgUrl"/>
                   <h3>A high quality UI Toolkit based on Vue.js</h3>
@@ -36,6 +36,12 @@
       data () {
         return {
           headerImgUrl : '/static/images/header.jpg'
+        }
+      },
+      methods: {
+        goToWorkDetail: function (data) {
+  //        console.log(data)
+          this.$router.push({name: "workDetail", params: {id: data}})
         }
       },
     }
