@@ -4,7 +4,7 @@
 
 <style lang="less" rel="stylesheet/less">
   .container-footer {
-    padding-top: 10px;
+    padding-top: 20px;
     height: 100%;
     .container {
       text-align: center;
