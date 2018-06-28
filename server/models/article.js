@@ -2,8 +2,8 @@
  * Created by kamlyli on 2017/8/20.
  */
 
-const db = require('../config/db')
-const articleModel = '../schema/blog_article'
+const db = require('../utils/db')
+const articleModel = '../schema/article'
 
 const BlogDB = db.Blog
 const Article = BlogDB.import(articleModel)
@@ -30,7 +30,22 @@ const getArticle = async function (id) {
   return article
 }
 
+// 通过Id增加阅读量
+const addPageView = async function (id) {
+  let article = await Article.findOne({
+    where: {
+      id: id,
+      state: '0'
+    }
+  })
+  article = await article.update({
+    pageview: article.pageview + 1
+  })
+  return article
+}
+
 module.exports = {
   getArticles,
-  getArticle
+  getArticle,
+  addPageView,
 }

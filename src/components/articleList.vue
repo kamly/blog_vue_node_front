@@ -36,9 +36,9 @@
           {{item.des}}
         </p>
         <div class="tag">
-           <template v-for="(item, index) in item.tag">
+          <template v-for="(item, index) in item.tag">
             <Tag color="blue">{{item}}</Tag>
-           </template>
+          </template>
         </div>
       </Card>
     </template>
@@ -67,10 +67,12 @@
       }
     },
     created() {
-      this.$http.get('/api/articles')
+      this.$http.get('/api/v1/articles')
         .then((res) => {
-//          console.log(res.data.articles)
-          this.articles = res.data.articles
+//          console.log(res)
+          if (res.status === 200 && res.data.code === 0) {
+            this.articles = res.data.msg
+          }
         })
     }
 

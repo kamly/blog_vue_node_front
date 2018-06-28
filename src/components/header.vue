@@ -60,7 +60,8 @@
   <header class="container-header">
     <Row type="flex" justify="center" align="middle" class="header-des">
       <Col span="10" class="text left">
-      <a href="#">简历</a>
+      <a href="https://charmingkamly.cn">主页</a>
+      <a href="https://blog.charmingkamly.cn">博客</a>
       <a href="https://github.com/kamly">Github</a>
       </Col>
       <Col span="4" class="img">
@@ -78,6 +79,9 @@
     </Row>
     <Row type="flex" justify="center" align="middle" class="header-select">
       <Menu mode="horizontal" active-name="index" @on-select="goTo">
+        <MenuItem name="todo">
+          <span>Todo</span>
+        </MenuItem>
         <MenuItem name="workList">
           <span>Works</span>
         </MenuItem>
@@ -86,6 +90,9 @@
         </MenuItem>
         <MenuItem name="about">
           <span>About</span>
+        </MenuItem>
+        <MenuItem name="life">
+          <span>Life</span>
         </MenuItem>
       </Menu>
     </Row>

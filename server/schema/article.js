@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('blog_article', {
+  return sequelize.define('article', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -25,14 +25,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     tag: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.JSON(500),
       allowNull: false
     },
     copyright: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    pv: {
+    pageview: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       defaultValue: '0'
@@ -53,6 +53,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, {
-    tableName: 'blog_article'
+    timestamps: false,
+    tableName: 'article'
   });
 };

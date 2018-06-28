@@ -29,9 +29,10 @@
       overflow: hidden;
     }
   }
+
   .markdown-style {
     // 代码高亮
-    pre{
+    pre {
       border-left: #1a63af solid 5px;
       background-color: #fff;
       padding: 10px 10px;
@@ -40,23 +41,20 @@
       background-color: #fff;
       color: #666;
     }
-    blockquote{
+    blockquote {
       border-left: 6px solid #ddd;
       margin: 30px 0;
       padding-left: 20px;
     }
-    blockquote blockquote{
+    blockquote blockquote {
       border: none;
       text-align: right;
     }
   }
+
   // 回滚
-  .top {
-      padding: 10px;
-      background: #25c3f3;
-      color: #fff;
-      text-align: center;
-      border-radius: 10px;
+  .ivu-back-top-inner {
+    background-color: #2c8bf0;
   }
 </style>
 
@@ -91,18 +89,17 @@
     </Row>
 
     <!-- 返回顶部 -->
-    <BackTop :bottom="100">
-        <div class="top">返回顶端</div>
-    </BackTop>
+    <BackTop :bottom="100" class="top"></BackTop>
   </div>
 </template>
 
 <script>
   import VueMarkdown from 'vue-markdown'
+
   export default {
     name: 'articleDetail',
     components: {
-        VueMarkdown // 声明组件
+      VueMarkdown // 声明组件
     },
     filters: {
       substrName: function (value) {
@@ -116,20 +113,21 @@
       },
 
     },
-    data(){
+    data() {
       return {
         id: '',
         articleDetail: ''
       }
     },
-    created(){
+    created() {
 //      console.log(this.$route.params.id)
       var id = this.$route.params.id;
       this.id = id;
-      this.$http.get('/api/article/' + id)
+      this.$http.get('/api/v1/article/' + id)
         .then((res) => {
-          this.articleDetail = res.data.article
-//          console.log(this.articleDetail)
+          if (res.status === 200 && res.data.code === 0) {
+            this.articleDetail = res.data.msg
+          }
         })
     }
   }

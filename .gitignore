@@ -13,7 +13,7 @@ yarn-error.log*
 *.sln
 
 # config
-server/config/config.js
+server/config
 
 # logs
-logs
+server/logs
