@@ -6,7 +6,6 @@
   .container-work-list {
     height: 100%;
     .item {
-      width: 320px;
       margin-top: 20px;
       img {
         width:200px
@@ -16,9 +15,9 @@
 </style>
 
 <template>
-    <div class="container-work-list">
+    <Row type="flex" justify="space-around" class="container-work-list">
       <template v-for="(item, index) in [1,2,3,4,5,6,7,8,9,10]">
-        <Col span="6">
+        <Col :xs="24" :sm="11" :md="11" :lg="5">
           <Card class="item" @click.native="goToWorkDetail(1)">
               <div style="text-align:center">
                   <img v-bind:src="headerImgUrl"/>
@@ -27,7 +26,7 @@
           </Card>
         </Col>
       </template>
-    </div>
+    </Row>
 </template>
 
 <script>

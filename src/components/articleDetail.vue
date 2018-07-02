@@ -76,7 +76,7 @@
       <div class="item">
         <Tooltip content="浏览人数" placement="right">
           <Icon type="ios-eye"></Icon>
-          {{articleDetail.pv}}
+          {{articleDetail.pageview}}
         </Tooltip>
       </div>
     </Row>

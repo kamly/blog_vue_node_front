@@ -23,9 +23,9 @@ Vue.use(VueRouter);
 const RouterConfig = [
   {path: '/', name: 'index', component: articleList}, // 文章
   {path: '/articleDetail/:id', name:'articleDetail', component: articleDetail}, // 具体文章
-  {path: '/about', name:'about', component: about}, // 关于
-  {path: '/life', name:'life', component: life}, // 生活
-  {path: '/todo', name:'todo', component: todo}, // 准备
+  {path: '/about', name:'about', component: about}, // 关于 还没有想清楚写啥
+  {path: '/life', name:'life', component: life}, // 生活，每次旅游的一张图片
+  {path: '/todo', name:'todo', component: todo}, // 准备，做的事情
   {path: '/workList', name:'workList', component: workList}, // 作品
   {path: '/workDetail/:id', name:'workDetail', component: workDetail}, // 具体作品
 ];
