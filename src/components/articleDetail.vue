@@ -40,6 +40,8 @@
     code {
       background-color: #fff;
       color: #666;
+      display: block;
+      overflow: scroll;
     }
     blockquote {
       border-left: 6px solid #ddd;
@@ -54,6 +56,9 @@
 
   // 回滚
   .ivu-back-top-inner {
+    background-color: #2c8bf0;
+  }
+  .ivu-back-top-inner:hover {
     background-color: #2c8bf0;
   }
 </style>
@@ -89,7 +94,7 @@
     </Row>
 
     <!-- 返回顶部 -->
-    <BackTop :bottom="100" class="top"></BackTop>
+    <BackTop :bottom="100"></BackTop>
   </div>
 </template>
 
