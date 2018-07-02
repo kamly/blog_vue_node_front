@@ -28,11 +28,9 @@ const getArticle = async (ctx) => {
   // console.log(ctx.params.id)  ctx.body.request
   let id = ctx.params.id || '';
   if (id === '') {
-
   }
   let article = await Article.getArticle(id)
   if (article === undefined) {
-
   }
   ctx.body = {
     msg: article,
@@ -45,31 +43,20 @@ const getArticle = async (ctx) => {
  * @returns {Promise.<void>}
  */
 const addPageView = async (ctx) => {
-  // throw new JsonException(10001);
-  // throw new JsonException(400);
-  // throw new JsonException(10001, '在xx位置错误');
-  // // console.log(ctx.params.id)  ctx.body.request
-  // let id = ctx.params.id || '';
-  // if (id === '') {
-  //   ctx.body = {
-  //     success: false
-  //   }
-  //   return
-  // }
-  // let article = await Article.getArticle(id)
-  // if(article === undefined){
-  //   ctx.body = {
-  //     success: false
-  //   }
-  // }
-  // // add
-  // article = await Article.addPageView(id)
-  // if(article === undefined){
-  //   ctx.body = {
-  //     success: false
-  //   }
-  //   return
-  // }
+  // console.log(ctx.params.id)  ctx.body.request
+  let id = ctx.params.id || '';
+  if (id === '') {
+  }
+  let article = await Article.getArticle(id)
+  if(article === undefined){
+  }
+  // add
+  article = await Article.addPageView(id)
+  if(article){
+    ctx.body = {
+      msg: article,
+    }
+  }
 }
 
 module.exports = {

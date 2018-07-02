@@ -21,12 +21,15 @@
         margin: 10px;
       }
     }
+    // 内容
     .content {
       margin-bottom: 10px;
       font-size: 20px;
       word-wrap: break-word;
       word-break: break-all;
       overflow: hidden;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #dedcdc;
     }
   }
 
@@ -54,13 +57,14 @@
     }
   }
 
-  // 回滚
+  // 返回顶部
   .ivu-back-top-inner {
     background-color: #2c8bf0;
+    &:hover {
+      background-color: #2c8bf0;
+    }
   }
-  .ivu-back-top-inner:hover {
-    background-color: #2c8bf0;
-  }
+
 </style>
 
 <template>
@@ -107,11 +111,6 @@
       VueMarkdown // 声明组件
     },
     filters: {
-      substrName: function (value) {
-        //console.log(value.name);
-        if (!value) return '';
-        return value.name;
-      },
       substrTime: function (value) {
         if (!value) return '';
         return value.substr(0, 10);
@@ -124,16 +123,16 @@
         articleDetail: ''
       }
     },
-    created() {
-//      console.log(this.$route.params.id)
-      var id = this.$route.params.id;
+    async created() {
+      this.$Spin.show();
+      let id = this.$route.params.id;
       this.id = id;
-      this.$http.get('/api/v1/article/' + id)
-        .then((res) => {
-          if (res.status === 200 && res.data.code === 0) {
-            this.articleDetail = res.data.msg
-          }
-        })
+      // 增加阅读量+获取文章内容
+      let res = await this.$http.post(`api/v1/article/pageView/${id}`)
+      if (res.status === 200 && res.data.code === 0) {
+        this.articleDetail = res.data.msg
+        this.$Spin.hide();
+      }
     }
   }
 </script>

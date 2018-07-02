@@ -62,18 +62,17 @@
     },
     methods: {
       goToArticleDetail: function (data) {
-//        console.log(data)
+        // console.log(data)
         this.$router.push({name: "articleDetail", params: {id: data}})
       }
     },
-    created() {
-      this.$http.get('/api/v1/articles')
-        .then((res) => {
-//          console.log(res)
-          if (res.status === 200 && res.data.code === 0) {
-            this.articles = res.data.msg
-          }
-        })
+    async created() {
+      this.$Spin.show();
+      let res = await this.$http.get('/api/v1/articles')
+      if (res.status === 200 && res.data.code === 0) {
+        this.articles = res.data.msg
+        this.$Spin.hide();
+      }
     }
 
   }
