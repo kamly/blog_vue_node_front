@@ -6,8 +6,6 @@
 const koa = require('koa');
 const app = new koa();
 
-// 数据库
-const db = require('./server/utils/db')
 //bodyparser
 const bodyparser = require('koa-bodyparser')();
 //json

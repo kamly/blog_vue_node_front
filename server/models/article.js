@@ -21,13 +21,12 @@ const getArticles = async function () {
 
 // 通过Id获取文章内容
 const getArticle = async function (id) {
-  const article = await Article.findOne({
+  return await Article.findOne({
     where: {
       id: id,
       state: '0'
     }
   })
-  return article
 }
 
 // 通过Id增加阅读量
@@ -38,10 +37,9 @@ const addPageView = async function (id) {
       state: '0'
     }
   })
-  article = await article.update({
+  return await article.update({
     pageview: article.pageview + 1
   })
-  return article
 }
 
 module.exports = {

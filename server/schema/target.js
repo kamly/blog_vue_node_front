@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('article', {
+  return sequelize.define('target', {
     id: {
       type: DataTypes.INTEGER(11).UNSIGNED,
       allowNull: false,
@@ -16,24 +16,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(500),
       allowNull: false
     },
-    cover: {
-      type: DataTypes.STRING(500),
-      allowNull: false
-    },
     content: {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    tag: {
-      type: DataTypes.JSON,
-      allowNull: false
-    },
-    copyright: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    pageview: {
-      type: DataTypes.INTEGER(11),
+    finshed: {
+      type: DataTypes.ENUM('0','1'),
       allowNull: false,
       defaultValue: '0'
     },
@@ -54,6 +42,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     timestamps: false,
-    tableName: 'article'
+    tableName: 'target'
   });
 };
