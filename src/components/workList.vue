@@ -22,13 +22,13 @@
   <Row type="flex" justify="space-around" class="container-work-list">
     <template v-for="(item, index) in works">
       <Col :xs="24" :sm="11" :md="11" :lg="5">
-      <Card class="item" @click.native="goToWorkDetail(1)">
-        <div style="text-align:center">
-          <img :src="item.cover"/>
-          <h2>{{item.title}}</h2>
-          <h5>{{item.des}}</h5>
-        </div>
-      </Card>
+        <Card class="item" @click.native="goToWorkDetail(1)">
+          <div style="text-align:center">
+            <img :src="item.cover"/>
+            <h2>{{item.title}}</h2>
+            <h5>{{item.des}}</h5>
+          </div>
+        </Card>
       </Col>
     </template>
   </Row>

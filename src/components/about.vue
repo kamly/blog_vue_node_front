@@ -8,7 +8,7 @@
 </style>
 
 <template>
-  <div class="container-about" id="scrollLoader-container">
+  <div class="container-about">
     TODO
   </div>
 </template>

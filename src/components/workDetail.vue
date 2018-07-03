@@ -63,7 +63,7 @@
 </style>
 
 <template>
-  <div class="container-work-detail">
+  <Row class="container-work-detail">
     <!--标题-->
     <Row class="title" type="flex" justify="center">
       {{workDetail.title}}
@@ -85,7 +85,7 @@
 
     <!-- 返回顶部 -->
     <BackTop :bottom="100"></BackTop>
-  </div>
+  </Row>
 </template>
 
 <script>
