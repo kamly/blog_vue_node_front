@@ -59,7 +59,9 @@ const formatRes = function (ctx, spendTime) {
   //请求参数
   let query = ctx.query ? ctx.query : []
   let body = ctx.request.body ? ctx.request.body : []
-  let logText = {
+  let code = ctx.body.code ? ctx.body.code : ''
+  let msg = ctx.body.msg ? ctx.body.msg : ''
+  logText = {
     'time': new Date().Format("yyyy-MM-dd hh:mm:ss"),
     'originalUrl': ctx.originalUrl, // 请求原始地址
     'clientIp': ctx.ip, // 客户端ip
@@ -68,8 +70,8 @@ const formatRes = function (ctx, spendTime) {
     'query': query,
     'body': body,
     'status': ctx.status,
-    'code': ctx.body.code,
-    'msg': ctx.body.msg,
+    'code': code,
+    'msg': msg,
     'spendTime': `${spendTime}ms`
   }
   return logText;
