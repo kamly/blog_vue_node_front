@@ -38,7 +38,7 @@ const exception = async (ctx, next) => {
       }
       ctx.app.emit('error', e, ctx); // 必须调用ctx.app.emit(),手动释放error事件，才能让监听函数生效
     }
-    // logUtil.logError(ctx, e);
+    logUtil.logError(ctx, e);
   }
 }
 

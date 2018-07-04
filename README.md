@@ -48,7 +48,13 @@ module.exports = {
 
 ## 配置log_config
 
-详细内容请看wiki
+1. 内容详细请看wiki
+
+2. 创建目录
+
+```bash
+mkdir server/logs
+```
 
 ## 配置config
 
@@ -106,6 +112,8 @@ server {
 sudo npm run build # 只是打包，不需要启动服务
 
 sudo node server # 端口是3000
+
+mkdir logs # 创建目录
 
 nohup sudo node server &>> /data/www/blog.charmingkamly.cn/logs/nohup.log  & # 挂起
 ```

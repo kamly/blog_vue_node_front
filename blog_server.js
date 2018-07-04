@@ -50,7 +50,7 @@ app.use(async (ctx, next) => {
   logUtil.logRequest(ctx);
   await next();
   const ms = new Date().getTime() - start; //耗费时间
-  // logUtil.logResponse(ctx, ms);
+  logUtil.logResponse(ctx, ms);
   console.log(`Time ${ms}ms`);
 })
 
