@@ -4,7 +4,7 @@
     整体布局是flex
    */
 
-  html, body {
+  body {
     height: 100%;
     background-color: #f6f6f6;
   }

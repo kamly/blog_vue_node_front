@@ -82,7 +82,7 @@
       let res = await this.$http.get('/api/v1/targets')
       if (res.status === 200 && res.data.code === 0) {
         this.targets = res.data.msg
-        console.log(this.targets)
+        // console.log(this.targets)
         this.$Spin.hide();
       }
     }
