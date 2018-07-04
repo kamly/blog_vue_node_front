@@ -3,12 +3,6 @@
   /*
     整体布局是flex
    */
-
-  body {
-    height: 100%;
-    background-color: #f6f6f6;
-  }
-
   .body {
     display: flex;
     flex-direction: column;
