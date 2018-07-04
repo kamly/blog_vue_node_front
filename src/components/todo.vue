@@ -29,6 +29,7 @@
       /*描述*/
       .des {
         margin: 5px 0px;
+        padding-left: 15px;
         font-size: 14px;
         color: #A4A4A4
       }
@@ -39,22 +40,24 @@
 <template>
   <Row class="container-todo" type="flex" justify="start">
     <Timeline style="width: 100%">
-      <template v-for="(item, index) in [1,2]">
+      <template v-for="(item, index) in targets">
         <TimelineItem>
-          <div class="time">2019年</div>
+          <div class="time">{{item.time}}</div>
           <Row class="content-outer">
-            <template v-for="(item, index) in [1,2,3]">
+            <template v-for="(m, x) in item.data">
               <Row class="content-inner">
                 <Row type="flex" justify="start" align="middle">
-                  <i-circle  :size=20 :percent="100" stroke-color="#5cb85c">
-                    <Icon type="ios-checkmark-empty" :size=20 style="color:#5cb85c"></Icon>
+                  <i-circle :size=20 :percent="100" stroke-color="#5285b8" v-if="m.finished == 1">
+                    <Icon type="ios-checkmark-empty" :size=20 style="color:#5285b8"></Icon>
+                  </i-circle>
+                  <i-circle :size=20 :percent="0" stroke-color="#5cb85c" v-if="m.finished == 0">
                   </i-circle>
                   <span class="title">
-                    博客博客主博客博客主
+                    {{m.title}}
                   </span>
                 </Row>
                 <Row class="des">
-                  博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等博客主页等等
+                  {{m.des}}
                 </Row>
               </Row>
             </template>
@@ -69,6 +72,20 @@
 
   export default {
     name: 'todo',
+    data() {
+      return {
+        targets: []
+      }
+    },
+    async created() {
+      this.$Spin.show();
+      let res = await this.$http.get('/api/v1/targets')
+      if (res.status === 200 && res.data.code === 0) {
+        this.targets = res.data.msg
+        console.log(this.targets)
+        this.$Spin.hide();
+      }
+    }
   }
 
 </script>

@@ -8,6 +8,10 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
+    time: {
+      type: DataTypes.INTEGER(11).UNSIGNED,
+      allowNull: false
+    },
     title: {
       type: DataTypes.STRING(100),
       allowNull: false
@@ -16,11 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(500),
       allowNull: false
     },
-    content: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    finshed: {
+    finished: {
       type: DataTypes.ENUM('0','1'),
       allowNull: false,
       defaultValue: '0'

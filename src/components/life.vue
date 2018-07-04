@@ -32,16 +32,16 @@
 <template>
   <Row class="container-life" type="flex" justify="start">
     <Timeline style="width: 100%">
-      <template v-for="(item, index) in [1,2]">
+      <template v-for="(item, index) in lives">
         <TimelineItem>
-          <div class="time">2018年10月5日</div>
-            <Card class="item" @click.native="goToWorkDetail(1)">
-              <div style="text-align:center">
-                <img :src="headerImgUrl"/>
-                <h2>123123</h2>
-                <h5>123123</h5>
-              </div>
-            </Card>
+          <div class="time">{{item.time}}</div>
+          <Card class="item" @click.native="goToWorkDetail(1)">
+            <div style="text-align:center">
+              <img :src="item.cover"/>
+              <h2>{{item.title}}</h2>
+              <h5>{{item.content}}</h5>
+            </div>
+          </Card>
         </TimelineItem>
       </template>
     </Timeline>
@@ -52,11 +52,19 @@
 
   export default {
     name: 'life',
-    data () {
+    data() {
       return {
-        headerImgUrl : '/static/images/header.jpg'
+        lives: []
       }
     },
+    async created() {
+      this.$Spin.show();
+      let res = await this.$http.get('/api/v1/lives')
+      if (res.status === 200 && res.data.code === 0) {
+        this.lives = res.data.msg
+        this.$Spin.hide();
+      }
+    }
   }
 
 </script>

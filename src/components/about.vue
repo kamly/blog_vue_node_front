@@ -8,9 +8,9 @@
 </style>
 
 <template>
-  <div class="container-about">
+  <Row class="container-about" type="flex" justify="center">
     TODO
-  </div>
+  </Row>
 </template>
 
 <script>
