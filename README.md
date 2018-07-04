@@ -26,21 +26,41 @@ sudo npm install
 
 ## 配置db
 
-vim server/config/config.js
+vim server/config/db_config.js
 
 ```js
-const mysql_user="xxxx"
-const mysql_password="xxxx"
-const mysql_ip="localhost"
-const mysql_db="blog"
-
 module.exports = {
-  mysql_user,
-  mysql_password,
-  mysql_ip,
-  mysql_db
+  database: 'xxx',
+  user: 'xxx',
+  password: 'xxx',
+  options: {
+    dialect: 'mysql',
+    host: 'xxx.xxx.xxx.xxx',
+    port: xxxx,
+    // 设置MySQL超时时间
+    dialectOptions: {
+      connectTimeout: 999999,
+      requestTimeout: 999999,
+    }
+  },
 }
 ```
+
+## 配置log_config
+
+详细内容请看wiki
+
+## 配置config
+
+```js
+const db = require('./db_config')
+
+module.exports = {
+  db: db,
+  debug: true
+}
+```
+
 
 ## 配置nginx
 
