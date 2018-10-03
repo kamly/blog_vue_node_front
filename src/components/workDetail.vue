@@ -32,6 +32,7 @@
   .markdown-style {
     // 代码高亮
     pre {
+      margin-left: 2rem;
       border-left: #1a63af solid 5px;
       background-color: #fff;
       padding: 10px 10px;
@@ -50,6 +51,24 @@
     blockquote blockquote {
       border: none;
       text-align: right;
+    }
+    // 文字
+    p {
+      img {
+        width: 100%;
+      }
+      text-indent: 2em;
+    }
+    // 列表
+    ol {
+      text-indent: 4em;
+      list-style-type: none;
+      counter-reset: sectioncounter;
+    }
+    ol li:before {
+      content: counter(sectioncounter) "、";
+      counter-increment: sectioncounter;
+
     }
   }
 
