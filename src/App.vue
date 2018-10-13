@@ -1,6 +1,6 @@
 <style lang="less" rel="stylesheet/less">
 
-  /*
+  /**
     整体布局是flex
    */
   .body {
